@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>דיווח יומי - ייצור</title>
+  <style>
+    /* רקע כללי */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f0f4f7, #c2e9fb);
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* קופסת הטופס */
+    .form-container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 30px 40px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-top: 15px;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .checkbox-row {
+      margin-top: 15px;
+      font-weight: 600;
+      color: #444;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin-top: 25px;
+      padding: 10px 0;
+      background-color: #4a90e2;
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>דיווח יומי - ייצור</h2>
+
+    <form method="POST" action="https://hook.eu2.make.com/exkbm48cp8bye8s0u27cekxwlmpcp871" accept-charset="UTF-8">
+	
+	  <label>מספר עובד:</label>
+      <input type="text" name="employee_id" required>	
+
+      <label>שם עובד:</label>
+      <input type="text" name="employee_name" required>
+
+      <label>תאריך:</label>
+      <input type="date" name="report_date" id="report_date" readonly>
+
+      <div class="checkbox-row">
+        <label>
+          <input type="checkbox" name="check_done" value="true">
+          בדיקה בוצעה
+        </label>
+      </div>
+       <label>הערות (רשות):</label>
+       <textarea name="notes" rows="3"></textarea>
+
+      <button type="submit">שלח</button>
+    </form>
+  </div>
+
+  <script>
+    // קובע תאריך אוטומטי להיום
+    const today = new Date().toISOString().slice(0,10);
+    document.getElementById('report_date').value = today;
+  </script>
+
+</body>
+</html>
