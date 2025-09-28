@@ -86,10 +86,11 @@
     <h2>דיווח יומי - ייצור</h2>
 
     <form method="POST" action="https://hook.eu2.make.com/exkbm48cp8bye8s0u27cekxwlmpcp871" accept-charset="UTF-8">
-	
+      <label>מספר עובד:</label>
+      <input type="text" name="employee_id" required>
 
       <label>שם עובד:</label>
-      <input type="text" name="employee" required>
+      <input type="text" name="employee_name" required>
 
       <label>תאריך:</label>
       <input type="date" name="report_date" id="report_date" readonly>
@@ -100,8 +101,9 @@
           בדיקה בוצעה
         </label>
       </div>
-       <label>הערות (רשות):</label>
-       <textarea name="notes" rows="3"></textarea>
+
+      <label>הערות (רשות):</label>
+      <textarea name="notes" rows="3"></textarea>
 
       <button type="submit">שלח</button>
     </form>
@@ -115,6 +117,3 @@
 
 </body>
 </html>
-
-
-
